@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>QR Code Generator</title>
+    <link
+      rel="icon"
+      href="{% static 'generator/qr.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'generator/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/doc">Document</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>QR Code Generator</h1>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <div class="file-upload-vintage">
+          <label for="logo-upload">📜 Upload Logo</label>
+          {{ form.logo }}
+        </div>
+        <button class="btn-submit" type="submit">Generate</button>
+      </form>
+    </main>
+    <footer>
+      <hr />
+      <p>
+        Or call the API POST /api/generate-png/ (data, box_size, border,
+        error_correction) to get PNG. <a href="/doc">read API docs</a>
+      </p>
+    </footer>
+  </body>
+</html>

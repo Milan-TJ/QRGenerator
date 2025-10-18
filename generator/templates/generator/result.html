@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>QR Code Generator</title>
+    <link
+      rel="icon"
+      href="{% static 'generator/qr.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'generator/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/doc">Document</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1>QR Code Generator</h1>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="btn-submit" type="submit">Generate</button>
+      </form>
+      <hr />
+      <section class="view-result">
+        <h1>Your QR Code</h1>
+        <img
+          src="{{ qr_data_uri }}"
+          alt="QR code preview"
+          style="max-width: 90vw; height: auto"
+        />
+        <p>
+          <a id="download-link" href="{{ qr_data_uri }}" download="qrcode.png"
+            >Download PNG</a
+          >
+        </p>
+      </section>
+      <hr />
+      <h3>Generate another</h3>
+    </main>
+    <footer>
+      <p>Or use the API endpoint at <code>/api/generate-png/</code>.</p>
+    </footer>
+  </body>
+</html>

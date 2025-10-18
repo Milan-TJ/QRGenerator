@@ -1,0 +1,291 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- BASE STYLES ---------- */
+body {
+  background-color: #faebd7; /* Antique White */
+  color: #3c3c3c;
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+a {
+  color: #c1876b; /* Dusty Rose */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #704214; /* Sepia Brown */
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  color: #704214;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #708238; /* Olive accent */
+  margin: 1.5rem auto;
+  width: 80%;
+  opacity: 0.5;
+}
+
+/* ---------- NAVBAR ---------- */
+.nav-bar {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #000;
+  background: #f3e9dc;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3c3c3c;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #e8d3a4;
+  color: #4a3f35;
+}
+
+/* ---------- MAIN ---------- */
+main {
+  width: 90%;
+  max-width: 700px;
+  margin: 3rem auto;
+  text-align: left;
+}
+
+/* ---------- FORM CONTAINER ---------- */
+form {
+  background: #f3e9dc; /* parchment */
+  border: 2px solid #c8b482; /* faded gold */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #b49c72;
+  padding: 30px 40px;
+  font-family: "Georgia", serif;
+  color: #4a3f35;
+}
+
+/* ---------- LABELS ---------- */
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #3b2f2f;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- INPUTS, TEXTAREA, SELECT ---------- */
+form input[type="number"],
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #c8b482;
+  border-radius: 8px;
+  background: #fffaf0;
+  font-family: "Georgia", serif;
+  color: #4a3f35;
+  font-size: 15px;
+  box-shadow: inset 2px 2px 3px #e0cfa0;
+  transition: all 0.2s ease-in-out;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #b49c72;
+  box-shadow: 0 0 6px #d6b87b;
+  background: #fff8e7;
+}
+
+/* ---------- PARAGRAPH SPACING ---------- */
+form p {
+  margin-bottom: 20px;
+}
+
+/* ---------- FILE UPLOAD ---------- */
+.file-upload-vintage {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.file-upload-vintage label {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #f5deb3;
+  color: #4a3f35;
+  border: 2px solid #c8b482;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #b49c72;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-upload-vintage label:hover {
+  background: #e8d3a4;
+  box-shadow: 1px 1px 0 #b49c72;
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.btn-submit {
+  width: 100%;
+  display: inline-block;
+  padding: 12px 28px;
+  background: #f5deb3;
+  color: #4a3f35;
+  border: 2px solid #c8b482;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #b49c72;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "Georgia", serif;
+}
+
+.btn-submit:hover {
+  background: #e8d3a4;
+  box-shadow: 1px 1px 0 #b49c72;
+  transform: translateY(1px);
+}
+
+.btn-submit:active {
+  background: #d8c08c;
+  box-shadow: inset 2px 2px 5px #b49c72;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #4a3f35;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #704214;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media only screen and (max-width: 768px) {
+  form {
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .btn-submit,
+  .file-upload-vintage label {
+    text-align: center;
+  }
+}
+
+/* ---------- QR RESULT SECTION ---------- */
+.view-result {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px 40px;
+  background: #fdf6ec; /* parchment tone */
+  border: 2px solid #c8b482; /* aged gold border */
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #b49c72; /* subtle offset shadow */
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #4a3f35;
+}
+
+.view-result h1 {
+  font-size: 2rem;
+  color: #704214; /* sepia header tone */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-result img {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #c8b482;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fffaf0; /* warm white */
+  box-shadow: inset 1px 1px 4px #e0cfa0, 3px 3px 0 #b49c72;
+}
+
+.view-result p {
+  margin-top: 25px;
+}
+
+/* ---------- DOWNLOAD LINK ---------- */
+#download-link {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #f5deb3;
+  color: #4a3f35;
+  border: 2px solid #c8b482;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #b49c72;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+#download-link:hover {
+  background: #e8d3a4;
+  box-shadow: 1px 1px 0 #b49c72;
+  transform: translateY(1px);
+}
+
+#download-link:active {
+  background: #d8c08c;
+  box-shadow: inset 2px 2px 5px #b49c72;
+}
+
